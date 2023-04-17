@@ -1,0 +1,54 @@
+@use "base";
+
+.topbar_wrapper{
+
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding:30px 66px 20px 20px;
+
+
+    .topbar_right_wrapper{
+        display:flex;
+        justify-content:space-around;
+        gap: 40px;
+        margin-top: -10px;
+
+        .topbar_profile_wrapper{
+            display:flex;
+            gap:15px;
+
+            .topbar_right_image{
+                height: 48px;
+                width: 48px;
+                border-radius: 100%;
+            }
+        }
+
+        .topbar_right_icon{
+            margin-top: 12px;
+        }
+    }
+
+    .topbar_left_wrapper{
+        display: flex;
+        gap: 150px;
+        justify-content: space-around;
+
+        .topbar_left_search_wrapper{
+            display: flex;
+            
+            .topbar_left_search{
+                background-color: base.$primary-color;
+                height: 30px;
+                width: 56px;
+                margin-left: -25px;
+                border-radius: 0px 5px 5px 0px;
+                text-align: center;
+                padding-top: 10px;
+            }
+        }
+        
+
+    }
+}

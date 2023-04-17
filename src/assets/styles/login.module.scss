@@ -1,0 +1,52 @@
+@use 'base';
+
+.body{
+    padding-top: 106px;
+    padding-left: 97px;
+
+    .flexwrapper {
+        display: flex;
+        flex-wrap: no-wrap;
+        justify-content: flex-start;
+        margin-top: 50px;
+    }
+
+    .imgWrapperChild {
+        width:50%;
+        padding-top: 110px;
+    }
+    .formWrapperChild {
+        width:50%;
+        
+    }
+
+    .baseInputWrapper{
+        margin-top: 70px;
+    }
+
+    .baseButtonWrapper{
+        margin-top: 30px;
+    }
+
+    .welcomeHeader{
+        font-size: 40px;
+        font-weight:700;
+        color: #213F7D;
+    }
+
+    .welcomeHeaderMin{
+        font-size: 20px;
+        margin-top: -25px;
+        color: #545F7D;
+    }
+    .baseInput {
+        margin-top: 30px;
+    }
+
+    .forgotpass{
+        color: base.$primary-color;
+        font-size: 12px;
+        margin-top: 25px;
+    }
+}
+

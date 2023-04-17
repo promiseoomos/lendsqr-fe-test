@@ -1,0 +1,23 @@
+@use 'base';
+
+.input {
+    width: 300px;
+    height: 50px;
+    padding: 0px 10px 0px 10px;
+    border: 2px solid #545F7D26;
+    border-radius: 5px;
+    outline: none;
+
+    &::placeholder{
+        color: #545F7D;
+        font-size: 14px;
+    }
+}
+
+.togglePassword{
+    color: base.$primary-color;
+    position: relative;
+    right: -90%;
+    top: -50px;
+    cursor: pointer;
+}

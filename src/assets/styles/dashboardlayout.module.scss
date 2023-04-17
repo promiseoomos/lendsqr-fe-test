@@ -1,0 +1,17 @@
+@use "base";
+
+.wrapper_body{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:flex-wrap;
+    min-height: 800px;
+
+    .dashboard_sidebar{
+        width: 20%;
+        background-color: white;
+    }
+
+    .dashboard_content{
+        width: 80%;
+    }
+}

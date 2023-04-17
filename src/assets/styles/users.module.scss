@@ -1,0 +1,39 @@
+@use "base";
+
+.users_container_wrapper{
+    padding: 60px;
+
+    .user_header{
+        font-size: 24px;
+        color: base.$primary-font-color;
+        font-weight: 500;
+    }
+
+    .users_cards_wrapper{
+        display: flex;
+        gap:25px;
+        justify-content: space-between;
+    }
+
+    .users_card_item{
+        width: 240px;
+        height: 160px;
+        padding: 20px 0px 0px 30px;
+        background-color: white;
+        border-radius: 5px;
+        ;
+
+        .user_card_title{
+            font-size: 14px;
+            font-weight: 500;
+            color: base.$secondary-font-color;
+        }
+
+        .user_card_value{
+            font-size: 24px;
+            color: base.$primary-font-color;
+            font-weight: 600;
+        }
+    }
+}
+
