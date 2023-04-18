@@ -1,5 +1,9 @@
 @use "base";
 
+*{
+    box-sizing: border-box;
+}
+
 .users_container_wrapper{
     padding: 60px;
 
@@ -13,6 +17,7 @@
         display: flex;
         gap:25px;
         justify-content: space-between;
+        margin-top: 40px;
     }
 
     .users_card_item{
@@ -21,19 +26,177 @@
         padding: 20px 0px 0px 30px;
         background-color: white;
         border-radius: 5px;
-        ;
+        box-shadow: 5px 5px 10px 5px rgba(242, 240, 240, 0.601);
 
         .user_card_title{
             font-size: 14px;
             font-weight: 500;
+            margin-top: 14px;
             color: base.$secondary-font-color;
         }
 
         .user_card_value{
             font-size: 24px;
+            margin-top: 12px;
             color: base.$primary-font-color;
             font-weight: 600;
         }
+    }
+
+    .users_table_wrapper{
+        background-color: white;
+        border-radius: 5px;
+        padding: 30px;
+        min-height: 500px;
+        width: full;
+        margin-top: 40px;
+        box-shadow: 5px 5px 10px 5px rgba(242, 240, 240, 0.601);
+
+        .users_table_headers_wrapper{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            flex-direction: row;
+            gap:15px;
+
+            .users_table_header_wrapper{
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                gap:10px;
+                text-align: left;
+                width: 19%;
+                
+                .users_table_header_text{
+                    color: base.$primary-font-color;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+
+                .users_table_header_icon{
+                    padding-top: 3px;
+                }
+            }
+
+            
+        }
+
+        .users_table_items_wrapper{
+            margin-top: 10px;
+            word-wrap: break-word;
+
+            .users_table_item_wrapper{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap:15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #213F7D1A;
+
+                .users_table_item{
+                    width: 19%;
+                    font-size: 14px;
+                    color: #545f7d;
+                    word-wrap: break-word;
+                    overflow:auto;
+                 
+
+                    .users_table_item_status{
+                        padding: 5px 15px 5px 15px;
+                        text-align: center;
+                        border-radius: 20px;
+                        width: fit-content;
+                        background-color: #e9b30016;
+                        color:#E9B200;
+                        margin-top: -5px;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+
+                    .users_table_item_active{
+                        color: #39CD62;
+                        background-color: #39cd6310;
+                    }
+
+                    .users_table_item_pending{
+                        color: #E9B200;
+                        background-color: #E9B20010;
+                    }
+
+                    .users_table_item_inactive{
+                        color: #545F7D;
+                        background-color: #545F7D10;
+                    }
+
+                    .users_table_item_blacklisted{
+                        color: #E4033B;
+                        background-color: #E4033B10;
+                    }
+
+
+                }
+
+                .users_table_item_status_wrapper{
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                
+            }
+        }
+
+    }
+
+    .pagination_wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+
+
+        .pagination_left_section{
+            display: flex;
+            gap:10px;
+
+            .pagination_left_section_text{
+                color: base.$primary-font-color;
+                margin-top: 3px;
+                font-size: 14px;
+
+            }
+        }
+
+        .pagination_right_section{
+            display: flex;
+            gap:15px;
+
+            .pagination_right_section_arrow{
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                border-radius: 3px;
+                padding-top: 6px;
+                padding-left: 8px;
+                background-color: #213F7D1A;
+                cursor: pointer;
+            }
+
+            .pagination_right_section_pages{
+                font-size: 16px;
+                font-weight: 400;
+                color:#545f7d3c;
+                cursor: pointer;
+            }
+
+            .pagination_right_section_current_page{
+                color:#545F7D;
+                font-weight: 500;
+            }
+        }
+
+
     }
 }
 

@@ -20,7 +20,7 @@ export default function Sidebar(){
             <div className={styles.sidebar_switch}>
                 <SwitchIcon className={styles.sidebar_icon} />
                 <p>Switch Organization</p>
-                <ArrowDownIcon style={{ marginTop: '22px'}} className={styles.sidebar_icon} />
+                <ArrowDownIcon className={styles.sidebar_icon} />
             </div>
 
             <div className={styles.sidebar_dasboard}>
