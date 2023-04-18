@@ -26,11 +26,11 @@ export default function TopBar(){
             
 
             <div className={styles.topbar_right_wrapper}>
-                <p>Docs</p>
+                <p style={{ textDecoration: 'underline'}} className={styles.topbar_right_text}>Docs</p>
                 <NotiIcon className={styles.topbar_right_icon} />
                 <div className={styles.topbar_profile_wrapper}>
                     <img className={styles.topbar_right_image} src={userProfilePic} />
-                    <p>Adedeji</p>
+                    <p className={styles.topbar_right_text}>Adedeji</p>
                     <ArrowDropDown className={styles.topbar_right_icon} />
                 </div>
             </div>
