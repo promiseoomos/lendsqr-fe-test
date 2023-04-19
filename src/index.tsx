@@ -5,6 +5,7 @@ import App from './App';
 import Dashboard from "./pages/Dashboard"
 import Login from './pages/Login';
 import Users from './pages/Users';
+import UserDetails from './pages/UsersDetails';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
@@ -25,6 +26,10 @@ export const router = createBrowserRouter(
                 {
                   path: "users",
                   element: <Users />
+                },
+                {
+                  path: "users/:userId",
+                  element: <UserDetails />
                 }
               ]
             }

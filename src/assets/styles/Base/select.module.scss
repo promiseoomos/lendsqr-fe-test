@@ -1,0 +1,9 @@
+@use "../base";
+
+.select_wrapper{
+    padding-left:10px;
+    padding-right: 10px;
+    border: 1px solid base.$primary-font-color;
+    border-radius: 3px;
+    color:#545F7D70;
+}

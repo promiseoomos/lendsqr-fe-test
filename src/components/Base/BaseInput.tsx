@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "../../assets/styles/baseinput.module.scss"
+import styles from "../../assets/styles/base/input.module.scss"
 
 export interface AppProps{
     type ?: string,

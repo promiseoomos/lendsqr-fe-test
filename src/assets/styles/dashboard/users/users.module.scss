@@ -1,4 +1,4 @@
-@use "base";
+@use "../../base";
 
 *{
     box-sizing: border-box;
@@ -76,6 +76,7 @@
 
                 .users_table_header_icon{
                     padding-top: 3px;
+                    cursor:pointer;
                 }
             }
 
@@ -143,6 +144,17 @@
                     justify-content: space-between;
                 }
 
+                .users_table_popover{
+                    width: 380px;
+                    padding: 22px;
+
+                    .users_table_popover_item{
+                        display: flex;
+                        justify-content: flex-start;
+                        gap:10px;
+                    }
+                }
+
                 
             }
         }
@@ -198,5 +210,145 @@
 
 
     }
+
+    .MuiPopover-root{
+        background-color: purple;
+        font-size: 30px;
+    }
+}
+
+.user_details_wrapper{
+    padding : 60px;
+
+    .back_wrapper{
+        display: flex;
+        gap:15px;
+    }
+
+    .header_wrapper{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        margin-top: 32px;
+
+        .header_left{
+            font-size: 24px;
+            font-weight: 500;
+            color: base.$primary-font-color;
+        }
+
+        .header_right_wrapper{
+            display: flex;
+            gap:20px;
+        }
+    }
+
+    .profile_card_wrapper{
+        padding: 30px 30px 0px 30px;
+        height: 210px;
+        background-color: white;
+        border-radius: 5px;
+        margin-top:30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .profile_upper{
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+
+            .profile_upper_first{
+                display: flex;
+                gap:20px;
+
+                .profile_avatar_img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100%;
+                }
+
+                .profile_upper_avatar_text{
+                    margin-top: 22px;
+
+                    & p:nth-child(1){
+                        font-size: 22px;
+                        font-weight: 500;
+                        color: base.$primary-font-color;
+                    }
+                    & p:nth-child(2) {
+                        font-size: 14px;
+                        margin-top:6px;
+                        color: base.$secondary-font-color
+                    }
+                }
+
+            }
+
+            .profile_upper_divider{
+                height: 80px;
+                border-left: 1px solid base.$secondary-font-color;
+                opacity: 0.2;
+                margin-top: 10px;
+            }
+
+            .profile_upper_usertier{
+                padding-top:23px;
+
+                .profile_upper_usertier_stars_wrapper{
+                    display: flex;
+                    gap:7px;
+                    color:#E9B200;
+                    margin-top: 12px;
+                }
+
+                p{
+                    color: base.$primary-font-color;
+                    font-size:14px;
+                }
+            }
+
+            .profile_upper_wallet{
+                padding-top: 20px;
+
+                & p:nth-child(1){
+                    font-size: 22px;
+                    font-weight: 500;
+                    color: base.$primary-font-color;
+                }
+
+                & p:nth-child(2){
+                    font-size: 12px;
+                    margin-top: 10px;
+                    color: base.$primary-font-color;
+                }
+            }
+        }
+
+        .profile_lower{
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+
+            & div{
+                width: 170px;;
+                text-align: center;
+                cursor: pointer;
+                padding-bottom: 8px;
+            }
+
+            .profile_lower_active{
+                border-bottom: 2px solid base.$primary-color;
+                color: base.$primary-color;
+            }
+        }
+    }
+
+    .content_card_wrapper{
+        background-color: white;
+        border-radius: 5px;
+        margin-top:30px;
+    }
+
 }
 

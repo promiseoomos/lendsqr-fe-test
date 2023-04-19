@@ -1,0 +1,50 @@
+@use "../../base";
+
+.container_wrapper{
+    padding: 30px;
+
+    .tab_card_header{
+        font-size: 16px;
+        color: base.$primary-font-color;
+        font-weight: 500;
+    }
+
+    .tab_card_section{
+        margin-top: 30px;;
+    }
+
+    .tab_card_content_wrapper_grid4{
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+        gap: 10px;
+    }
+
+    .tab_card_content_wrapper{
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+        gap: 10px;
+    }
+
+    .tab_card_content{
+        margin-top: 30px;
+
+        .tab_card_content_header{
+            
+            font-size: 12px;
+            color: base.$secondary-font-color;
+        }
+
+        .tab_card_content_text{
+            font-size: 16px;
+            font-weight: 500;
+            color: base.$secondary-font-color
+        }
+    }
+
+    .tab_card_divider{
+        width: inherit;
+        border: 1px solid base.$primary-font-color;
+        opacity: 0.1;
+        margin-top:30px;
+    }
+}
