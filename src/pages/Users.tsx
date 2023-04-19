@@ -1,13 +1,19 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState, MouseEvent, ChangeEventHandler } from "react"
 import axios from "axios"
 import styles from "../assets/styles/users.module.scss"
 import { userCardItems } from "../assets/resources/userCardItems"
 import BaseIcon from "../components/Base/BaseIcons"
 import { ReactComponent as FilterIcon } from "../assets/svgs/filterIcon.svg"
-import { Select } from "antd"
+import { Select, DatePicker } from "antd"
 import { ReactComponent as ArrowLeftIcon } from "../assets/svgs/arrowLeftIcon.svg"
 import { ReactComponent as ArrowRightIcon } from "../assets/svgs/arrowRigthIcon.svg"
 import UsersTableItem from "../components/Dashboard/UsersTableItem"
+import { Link } from "react-router-dom"
+import { Popover } from "@mui/material"
+import BaseSelect from "../components/Base/BaseSelect"
+import BaseInput from "../components/Base/BaseInput"
+import BaseButton from "../components/Base/BaseButton"
+import { flexbox } from "@mui/system"
 
 export interface UserType{
     createdAt?: string,
@@ -20,6 +26,30 @@ export default function Users(){
     const [ pageSize, setPageSize ] = useState(10);
     const [ currentPage, setCurrentPage] = useState(1);
     const pageCount= useMemo(() => Math.ceil(users?.length/pageSize), [users, pageSize]);
+    const [ anchorElement, setAnchorElement ] = useState<HTMLButtonElement | null>(null);
+
+    const handleAnchor = (event: MouseEvent<any>) => {
+        console.log(event);
+        setAnchorElement(event.currentTarget)
+    }
+    const handlePopoverClose = (event: MouseEvent<any>) => {
+        console.log(event);
+        setAnchorElement(null)
+    }
+    const handleChange = (event: any) => {
+        console.log(event)
+    }
+
+    const popoverItemStyles = {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        gap:'10px',
+        color: '#545F7D',
+        fontSize: '14px',
+        padding: '10px 5px',
+        cursor: 'pointer'
+
+    }
 
     useEffect(() => {
         const storedUsers = localStorage.getItem("users") ? localStorage.getItem("users") : [] ;
@@ -41,8 +71,8 @@ export default function Users(){
 
             <div className={styles.users_cards_wrapper}>
                 {
-                    userCardItems.map(item => (
-                        <div className={styles.users_card_item}>
+                    userCardItems.map((item,index) => (
+                        <div key={index} className={styles.users_card_item}>
                             <div className={styles.user_card_base_icon}>
                                 <BaseIcon element={item.icon} />
                             </div>
@@ -59,39 +89,86 @@ export default function Users(){
                     <div className={styles.users_table_header_wrapper}>
                         <p className={styles.users_table_header_text}>ORGANIZATION</p>
                         <div className={styles.users_table_header_icon}>
-                            <FilterIcon />
+                            <FilterIcon onClick={handleAnchor} />
                         </div>
                     </div>
                     <div className={styles.users_table_header_wrapper}>
                         <p className={styles.users_table_header_text}>USERNAME</p>
                         <div className={styles.users_table_header_icon}>
-                            <FilterIcon />
+                            <FilterIcon onClick={handleAnchor} />
                         </div>
                     </div>
                     <div className={styles.users_table_header_wrapper}>
                         <p className={styles.users_table_header_text}>EMAIL</p>
                         <div className={styles.users_table_header_icon}>
-                            <FilterIcon />
+                            <FilterIcon onClick={handleAnchor} />
                         </div>
                     </div>
                     <div className={styles.users_table_header_wrapper}>
                         <p className={styles.users_table_header_text}>PHONE NUMBER</p>
                         <div className={styles.users_table_header_icon}>
-                            <FilterIcon />
+                            <FilterIcon onClick={handleAnchor} />
                         </div>
                     </div>
                     <div className={styles.users_table_header_wrapper}>
                         <p className={styles.users_table_header_text}>DATE JOINED</p>
                         <div className={styles.users_table_header_icon}>
-                            <FilterIcon />
+                            <FilterIcon onClick={handleAnchor} />
                         </div>
                     </div>
                     <div className={styles.users_table_header_wrapper}>
                         <p className={styles.users_table_header_text}>STATUS</p>
                         <div className={styles.users_table_header_icon}>
-                            <FilterIcon />
+                            <FilterIcon onClick={handleAnchor} />
                         </div>
                     </div>
+
+                    <Popover id={'popover-item'} elevation={2} open={Boolean(anchorElement)} anchorEl={anchorElement} anchorOrigin={{ vertical: 'bottom',horizontal: 'left',}} 
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
+                        onClose={handlePopoverClose}
+                    >
+                        <div style={{ width: '270px', padding: '22px'}} className={styles.users_table_filter_popover}>
+                        
+                            <div style={{ marginTop: "20px"}}>
+                                <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Organization</p>
+                                <Select defaultValue={'select'} options={[{ value:'select', label: 'Select'}]} size="large" style={{ width: '230px', marginTop: "5px"}} onChange={handleChange}/>
+                            </div>
+
+                            <div style={{ marginTop: "20px"}}>
+                                <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Username</p>
+                                <BaseInput width='230px' height="40px" placeholder="User"/>
+                            </div>
+
+                            <div style={{ marginTop: "20px"}}>
+                                <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Email</p>
+                                <BaseInput type="email" width='230px' height="40px" placeholder="Email"/>
+                            </div>
+
+                            <div style={{ marginTop: "20px"}}>
+                                <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Date</p>
+                                <DatePicker size="large"  placeholder="Date" style={{ width: '230px', marginTop: "5px"}}/>
+                            </div>
+
+                            <div style={{ marginTop: "20px"}}>
+                                <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Phone Number</p>
+                                <BaseInput width='230px' height="40px" placeholder="Phone Number"/>
+                            </div>
+
+                            <div style={{ marginTop: "20px"}}>
+                                <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Status</p>
+                                <Select defaultValue={'select'} options={[{ value:'select', label: 'Select'}]} size="large" style={{ width: '230px', marginTop: "5px"}} onChange={handleChange}/>
+                            </div>
+
+                            <div style={{ display: 'flex', gap: "15px", marginTop: "30px"}}>
+                                <BaseButton bgColor="white" color="#545F7D" text="Reset" width="100px" border="1px solid #545F7D" />
+                                <BaseButton bgColor="#39CDCC" color="white" text="Filter" width="100px" />
+                            </div>
+                            
+                        </div>
+                    </Popover>
                 </div>
                 <div className={styles.users_table_items_wrapper}>
                     {
