@@ -19,13 +19,13 @@ export default function Sidebar(){
             
             <div className={styles.sidebar_switch}>
                 <SwitchIcon className={styles.sidebar_icon} />
-                <p>Switch Organization</p>
-                <ArrowDownIcon className={styles.sidebar_icon} />
+                <p className={styles.sidebar_switch_title}>Switch Organization</p>
+                <ArrowDownIcon style={{ marginTop: '8px'}} className={styles.sidebar_icon} />
             </div>
 
             <div className={styles.sidebar_dasboard}>
                 <DashboardIcon className={styles.sidebar_icon} />
-                <p>Dashboard</p>
+                <p className={styles.sidebar_dashboard_title}>Dashboard</p>
             </div>
 
             {

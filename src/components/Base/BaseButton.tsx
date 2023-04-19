@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "../../assets/styles/basebutton.module.scss"
+import styles from "../../assets/styles/Base/button.module.scss"
 
 export interface AppProps{
     width?: string,
@@ -7,18 +7,20 @@ export interface AppProps{
     text?: string,
     bgColor?: string;
     color?: string;
+    border?:string;
     onClick?: MouseEvent;
 }
 
 
-export default function BaseInput({ width = '400px', height = '50px', text = 'Save', bgColor = 'white', color= 'black' }: AppProps){
+export default function BaseButton({ width = '400px', height = '50px', text = 'Save', bgColor = 'white', color= 'black', border }: AppProps){
 
     return (
         <button style={{
                 width: width,
                 height: height,
                 backgroundColor: bgColor,
-                color: color
+                color: color,
+                border: border
             }} 
             className={styles.inner}
         >
