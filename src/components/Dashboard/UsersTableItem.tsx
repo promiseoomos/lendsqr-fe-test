@@ -1,4 +1,4 @@
-import styles from "../../assets/styles/users.module.scss"
+import styles from "../../assets/styles/dashboard/users/users.module.scss"
 import { capitalize } from "../../utilities/stringUtilities"
 import { format } from "date-fns"
 import { ReactComponent as ActionsIcon } from "../../assets/svgs/actionsIcon.svg"
@@ -32,7 +32,7 @@ export default function UsersTableItem(props: any){
 
     }
     return (
-        <div key={props.user.id} className={styles.users_table_item_wrapper}>
+        <div key={`${props.user.id}?tab=general`} className={styles.users_table_item_wrapper}>
             <div className={styles.users_table_item}>{capitalize(props.user.orgName)}</div>
             <div className={styles.users_table_item}>{props.user.userName}</div>
             <div className={styles.users_table_item}>{props.user.email}</div>
@@ -55,21 +55,21 @@ export default function UsersTableItem(props: any){
                     onClose={handlePopoverClose}
                 >
                     <div style={{ width: '220px', padding: '22px'}} className={styles.users_table_popover}>
-                        <Link to={props.user.id} style={popoverItemStyles} 
+                        <Link to={`${props.user.id}?tab=general`} style={popoverItemStyles} 
                             className={styles.users_table_popover_item}
                         >
                             <ViewDetailsIcon style={{ marginTop: '4px'}} />
                             <p>View Details</p>
                         </Link>
 
-                        <Link to={props.user.id} style={popoverItemStyles} 
+                        <Link to={`${props.user.id}?tab=general`} style={popoverItemStyles} 
                             className={styles.users_table_popover_item}
                         >
                             <BlacklistUserIcon style={{ marginTop: '4px'}} />
                             <p>Blacklist User</p>
                         </Link>
 
-                        <Link to={props.user.id} style={popoverItemStyles} 
+                        <Link to={`${props.user.id}?tab=general`} style={popoverItemStyles} 
                             className={styles.users_table_popover_item}
                         >
                             <ActivateUserIcon style={{ marginTop: '4px'}} />

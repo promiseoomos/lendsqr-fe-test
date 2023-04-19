@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "../../assets/styles/Base/button.module.scss"
+import styles from "../../assets/styles/base/button.module.scss"
 
 export interface AppProps{
     width?: string,

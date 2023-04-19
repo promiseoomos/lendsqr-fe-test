@@ -1,8 +1,8 @@
 import { ReactComponent as Logo } from "../assets/svgs/lendsqrLogo.svg";
-import loginstyles from "../assets/styles/login.module.scss"
+import loginstyles from "../assets/styles/onboarding/login.module.scss"
 import loginImage from "../assets/images/loginImage.png"
-import BaseInput from "../components/Base/BaseInput";
-import BaseButton from "../components/Base/BaseButton"
+import BaseInput from "../components/base/BaseInput";
+import BaseButton from "../components/base/BaseButton"
 import React from "react";
 
 export interface CompProps {

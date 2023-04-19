@@ -1,5 +1,5 @@
 import { useState, ChangeEventHandler } from "react"
-import styles from "../../assets/styles/Base/select.module.scss"
+import styles from "../../assets/styles/base/select.module.scss"
 
 export interface Options{
     text: string;
