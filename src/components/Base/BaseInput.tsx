@@ -18,15 +18,17 @@ export default function BaseInput({ type = 'text', width = '400px', height = '50
         <div style={{
             width: width,
             height: height
-        }}>
+        }} className={styles.input_wrapper}>
             <input type={newType} className={styles.input} style={{
                 width: width,
                 height: height
-            }} name="" placeholder={placeholder} />
+            }} name="input" placeholder={placeholder} />
             {
-                originalType == 'password' ? <p onClick={() => newType == 'password' ? setnewType('text') : newType == 'text' ? setnewType('password') : ''} className={styles.togglePassword}>
-                    { newType == 'text' ? 'Hide' : 'Show' }
-                </p> 
+                originalType === 'password' 
+                ? 
+                    <p onClick={() => newType === 'password' ? setnewType('text') : newType === 'text' ? setnewType('password') : ''} className={styles.togglePassword}>
+                        { newType === 'text' ? 'Hide' : 'Show' }
+                    </p> 
                 : 
                 ''
             }

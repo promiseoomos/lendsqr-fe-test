@@ -2,13 +2,13 @@ import React, { useState, useEffect, MouseEvent, ChangeEventHandler, MouseEventH
 import styles from "../assets/styles/dashboard/users/users.module.scss";
 import { ReactComponent as BackArrowIcon } from "../assets/svgs/backArrowIcon.svg"
 import { ReactComponent as ProfileAvatarIcon } from "../assets/svgs/profileAvatarIcon.svg"
-import BaseButton from "../components/base/BaseButton";
+import BaseButton from "../components/base/BaseButton.tsx";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import { StarRate, StarRateOutlined } from "@mui/icons-material";
 import { useSearchParams } from "react-router-dom";
 import { Skeleton } from "@mui/material";
-import UserGeneralTab from "../components/dashboard/UserGeneralTab";
+import UserGeneralTab from "../components/dashboard/UserGeneralTab.tsx";
 import { formatNumber } from "../utilities/stringUtilities";
 
 export default function UserDetails(){

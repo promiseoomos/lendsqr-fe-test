@@ -8,12 +8,18 @@ import { sidebarsItems } from "../../assets/resources/sidebarItem";
 import { Link, NavLink } from "react-router-dom";
 import { Icon, SvgIcon } from "@mui/material";
 import BaseIcon from "../base/BaseIcons";
+import { ReactComponent as SignOutIcon } from "../../assets/svgs/signoutIcon.svg"
+import { useNavigate } from "react-router-dom";
 
 export interface CompProps{
 }
 
 export default function Sidebar(){
-    
+    const navigator = useNavigate();
+
+    const logOut = () => {
+        navigator("/login")
+    }
     return (
         <div className={styles.sidebar_wrapper}>
             
@@ -52,6 +58,20 @@ export default function Sidebar(){
                     </div>
                 )
             }
+
+            <div className={styles.sidebar_footer}>
+                <div className={styles.sidebar_item_wrapper} onClick={logOut}>
+                    <div className={styles.sidebar_item_icon_wrapper} >
+                        <SignOutIcon />
+                    </div>
+                    
+                    <p className={styles.sidebar_item_title_full}>Logout</p>
+                </div>
+
+                <div className={styles.sidebar_item_wrapper}>
+                    <p className={styles.sidebar_item_title_full_small}>v1.2.0</p>
+                </div>
+            </div>
         </div>
     )
 }

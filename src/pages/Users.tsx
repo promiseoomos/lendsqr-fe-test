@@ -7,12 +7,12 @@ import { ReactComponent as FilterIcon } from "../assets/svgs/filterIcon.svg"
 import { Select, DatePicker } from "antd"
 import { ReactComponent as ArrowLeftIcon } from "../assets/svgs/arrowLeftIcon.svg"
 import { ReactComponent as ArrowRightIcon } from "../assets/svgs/arrowRigthIcon.svg"
-import UsersTableItem from "../components/dashboard/UsersTableItem"
+import UsersTableItem from "../components/dashboard/UsersTableItem.tsx"
 import { Link } from "react-router-dom"
-import { Popover } from "@mui/material"
-import BaseSelect from "../components/base/BaseSelect"
-import BaseInput from "../components/base/BaseInput"
-import BaseButton from "../components/base/BaseButton"
+import { Popover, Skeleton } from "@mui/material"
+import BaseSelect from "../components/base/BaseSelect.tsx"
+import BaseInput from "../components/base/BaseInput.tsx"
+import BaseButton from "../components/base/BaseButton.tsx"
 import { flexbox } from "@mui/system"
 
 export interface UserType{
@@ -40,6 +40,8 @@ export default function Users(){
         console.log(event)
     }
 
+    const arraylength = users.slice(0, pageSize * currentPage).splice(((currentPage * pageSize) - pageSize) + 1, pageSize)
+
     const popoverItemStyles = {
         display: 'flex',
         justifyContent: 'flex-start',
@@ -52,7 +54,7 @@ export default function Users(){
     }
 
     useEffect(() => {
-        const storedUsers = localStorage.getItem("users") ? localStorage.getItem("users") : [] ;
+        const storedUsers = localStorage.getItem("users") ? localStorage.getItem("users") : undefined ;
         setCurrentPage(1)
 
         if(storedUsers){
@@ -60,7 +62,7 @@ export default function Users(){
         }else{
             axios.get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users").then(({ data }) => {
                 setUsers(data)
-                localStorage.setItem("users", JSON.stringify(data));
+                localStorage.setItem("users", JSON.stringify(data))
             })
         }
         
@@ -170,16 +172,30 @@ export default function Users(){
                         </div>
                     </Popover>
                 </div>
-                <div className={styles.users_table_items_wrapper}>
-                    {
-                        users.slice(0, pageSize * currentPage).splice(((currentPage * pageSize) - pageSize) + 1, pageSize).map((user : any, index) => (
+                
+                {
+                    users.length > 0 
+                    ?
+                        
+                        <div className={styles.users_table_items_wrapper}>
+                            {
+                                
+                                users.slice(0, pageSize * currentPage).splice(((currentPage * pageSize) - pageSize) + 1, pageSize).map((user : any, index) => (
+                                    <UsersTableItem key={user.id} user={user} />     
+                                ))
+                            }
                             
-                            <UsersTableItem key={index} user={user} />     
-
-                        ))
-                    }
-                    
-                </div>
+                        </div>
+                    :
+                        <div className={styles.users_table_items_wrapper}>
+                            <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
+                            <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
+                            <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
+                            <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
+                            <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
+                            <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
+                        </div>
+                }
 
             </div>
 
