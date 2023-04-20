@@ -83,6 +83,10 @@
             
         }
 
+        .sidebar_item_wrapper{
+            cursor: pointer;
+        }
+
         .users_table_items_wrapper{
             margin-top: 10px;
             word-wrap: break-word;
@@ -96,22 +100,29 @@
                 padding-bottom: 20px;
                 border-bottom: 1px solid #213F7D1A;
 
+                &:last-child{
+                    border-bottom: 0px;
+                }
+
                 .users_table_item{
                     width: 19%;
                     font-size: 14px;
                     color: #545f7d;
                     word-wrap: break-word;
                     overflow:auto;
+
+                    
                  
 
                     .users_table_item_status{
-                        padding: 5px 15px 5px 15px;
+                        padding: 4px 15px 3px 15px;
                         text-align: center;
                         border-radius: 20px;
                         width: fit-content;
                         background-color: #e9b30016;
                         color:#E9B200;
-                        margin-top: -5px;
+                        margin-top: 0px;
+                        height: 30px;
                         font-size: 14px;
                         font-weight: 400;
                     }

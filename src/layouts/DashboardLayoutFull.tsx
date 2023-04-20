@@ -1,7 +1,7 @@
 import React from "react";
 import { PropsWithChildren } from "react";
-import Sidebar from "../components/nav/Sidebar"
-import TopBar from "../components/nav/TopBar"
+import Sidebar from "../components/nav/Sidebar.tsx"
+import TopBar from "../components/nav/TopBar.tsx"
 import styles from "../assets/styles/layouts/dashboardlayout.module.scss"
 
 export interface CompProps {

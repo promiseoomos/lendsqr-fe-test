@@ -4,20 +4,23 @@
     padding-top: 106px;
     padding-left: 97px;
 
-    .flexwrapper {
-        display: flex;
-        flex-wrap: no-wrap;
-        justify-content: flex-start;
-        margin-top: 50px;
+    & div {
+        width: 100%;
     }
+
+    .headWrapper{
+        width: 100%;
+    }
+
 
     .imgWrapperChild {
         width:50%;
-        padding-top: 110px;
+        padding-top: 90px;
     }
-    .formWrapperChild {
-        width:50%;
-        
+
+
+    .wrapperImage{
+        margin-left : -30px;
     }
 
     .baseInputWrapper{
@@ -36,7 +39,7 @@
 
     .welcomeHeaderMin{
         font-size: 20px;
-        margin-top: -25px;
+        margin-top: 10px;
         color: #545F7D;
     }
     .baseInput {
@@ -47,6 +50,49 @@
         color: base.$primary-color;
         font-size: 12px;
         margin-top: 25px;
+    }  
+    
+}
+
+.flexwrapper {
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: flex-start;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.formWrapperChild {
+    width:50%;
+    padding-left: 60px;
+    
+}
+
+
+
+@media (max-width: 999px){
+    .imgWrapperChild{
+        display: none;
+    }
+
+    .body{
+        padding: 40px;
+    }
+
+    .flexwrapper {
+        display: block;
+
+    }
+
+    .baseInput{
+        width: 100%;
+    }
+    
+
+    .formWrapperChild {
+        width:400px;
+        padding: 0px;
+        
     }
 }
 

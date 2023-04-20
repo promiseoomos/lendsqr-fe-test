@@ -15,6 +15,7 @@ import { ReactComponent as reportsIcon } from "../../assets/svgs/reportsIcon.svg
 import { ReactComponent as preferencesIcon } from "../../assets/svgs/preferencesIcon.svg"
 import { ReactComponent as feesAndPricingIcon } from "../../assets/svgs/feesAndPricingIcon.svg"
 import { ReactComponent as auditLogsIcon } from "../../assets/svgs/auditLogsIcon.svg"
+import { ReactComponent as systemMessagesIcon } from "../../assets/svgs/systemMessagesIcon.svg"
 
 
 
@@ -138,6 +139,11 @@ export const sidebarsItems = [
                 name: "Audit Logs",
                 icon: auditLogsIcon,
                 route: "audit"
+            },
+            {
+                name: "System Messages",
+                icon: systemMessagesIcon,
+                route: "messages"
             }
         ]
     }

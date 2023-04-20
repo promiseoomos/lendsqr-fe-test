@@ -12,11 +12,12 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } 
 export const router = createBrowserRouter(
     [
       {
-        path: "/",
+        path: "",
         element: <App />,
         children: [
             {
-              path: "/",
+              path: "/login",
+              index: true,
               element: <Login />
             },
             {

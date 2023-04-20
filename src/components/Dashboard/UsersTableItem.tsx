@@ -20,6 +20,9 @@ export default function UsersTableItem(props: any){
         console.log(event);
         setAnchorElement(null)
     }
+    const statuses = ["active", "pending", "blacklisted", "inactive"]
+    const randomIndex = Math.floor(Math.random() * statuses.length);
+    props.user.status = statuses[randomIndex]
 
     const popoverItemStyles = {
         display: 'flex',
@@ -32,7 +35,7 @@ export default function UsersTableItem(props: any){
 
     }
     return (
-        <div key={`${props.user.id}?tab=general`} className={styles.users_table_item_wrapper}>
+        <div className={styles.users_table_item_wrapper}>
             <div className={styles.users_table_item}>{capitalize(props.user.orgName)}</div>
             <div className={styles.users_table_item}>{props.user.userName}</div>
             <div className={styles.users_table_item}>{props.user.email}</div>
