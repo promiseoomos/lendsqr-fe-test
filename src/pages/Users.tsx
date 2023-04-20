@@ -7,11 +7,11 @@ import { ReactComponent as FilterIcon } from "../assets/svgs/filterIcon.svg"
 import { Select, DatePicker } from "antd"
 import { ReactComponent as ArrowLeftIcon } from "../assets/svgs/arrowLeftIcon.svg"
 import { ReactComponent as ArrowRightIcon } from "../assets/svgs/arrowRigthIcon.svg"
-import UsersTableItem from "../components/dashboard/UsersTableItem.tsx"
+import UsersTableItem from "../components/dashboard/UsersTableItem"
 import { Link } from "react-router-dom"
 import { Popover, Skeleton } from "@mui/material"
-import BaseInput from "../components/base/BaseInput.tsx"
-import BaseButton from "../components/base/BaseButton.tsx"
+import BaseInput from "../components/base/BaseInput"
+import BaseButton from "../components/base/BaseButton"
 import { flexbox } from "@mui/system"
 
 export interface UserType{
@@ -28,15 +28,16 @@ export default function Users(){
     const [ anchorElement, setAnchorElement ] = useState<HTMLButtonElement | null>(null);
 
     const handleAnchor = (event: MouseEvent<any>) => {
-        console.log(event);
+
         setAnchorElement(event.currentTarget)
     }
     const handlePopoverClose = (event: MouseEvent<any>) => {
-        console.log(event);
+
         setAnchorElement(null)
     }
-    const handleChange = (event: any) => {
-        console.log(event)
+    const handlePagesize = (event : number) => {
+        setPageSize(event) 
+        setCurrentPage(1)
     }
 
     const arraylength = users.slice(0, pageSize * currentPage).splice(((currentPage * pageSize) - pageSize) + 1, pageSize)
@@ -135,7 +136,7 @@ export default function Users(){
                         
                             <div style={{ marginTop: "20px"}}>
                                 <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Organization</p>
-                                <Select defaultValue={'select'} options={[{ value:'select', label: 'Select'}]} size="large" style={{ width: '230px', marginTop: "5px"}} onChange={handleChange}/>
+                                <Select defaultValue={'select'} options={[{ value:'select', label: 'Select'}]} size="large" style={{ width: '230px', marginTop: "5px"}} />
                             </div>
 
                             <div style={{ marginTop: "20px"}}>
@@ -160,7 +161,7 @@ export default function Users(){
 
                             <div style={{ marginTop: "20px"}}>
                                 <p style={{ fontWeight: 500, color: "#545F7D", fontSize: "14px"}}>Status</p>
-                                <Select defaultValue={'select'} options={[{ value:'select', label: 'Select'}]} size="large" style={{ width: '230px', marginTop: "5px"}} onChange={handleChange}/>
+                                <Select defaultValue={'select'} options={[{ value:'select', label: 'Select'}]} size="large" style={{ width: '230px', marginTop: "5px"}}/>
                             </div>
 
                             <div style={{ display: 'flex', gap: "15px", marginTop: "30px"}}>
@@ -201,7 +202,7 @@ export default function Users(){
             <div className={styles.pagination_wrapper}>
                 <div className={styles.pagination_left_section}>
                     <p className={styles.pagination_left_section_text}>Showing</p>
-                    <Select options={digitsArray} defaultValue={10} onChange={(value) => setPageSize(value)} style={{ width: '80px', backgroundColor: '#213F7D1A'}} />
+                    <Select options={digitsArray} defaultValue={10} onChange={handlePagesize} style={{ width: '80px', backgroundColor: '#213F7D1A'}} />
                     <p className={styles.pagination_left_section_text}>Out of { users.length }</p>
                 </div>
 

@@ -19,3 +19,11 @@
     top: -38px;
     cursor: pointer;
 }
+
+@media (max-width: 999px){
+    .togglePassword{
+        right: -80%;
+        top: -38px;
+        cursor: pointer;
+    }
+}

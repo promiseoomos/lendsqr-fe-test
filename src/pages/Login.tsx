@@ -1,8 +1,8 @@
 import { ReactComponent as Logo } from "../assets/svgs/lendsqrLogo.svg";
 import loginstyles from "../assets/styles/onboarding/login.module.scss"
 import loginImage from "../assets/images/loginImage.png"
-import BaseInput from "../components/base/BaseInput.tsx";
-import BaseButton from "../components/base/BaseButton.tsx"
+import BaseInput from "../components/base/BaseInput";
+import BaseButton from "../components/base/BaseButton"
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
