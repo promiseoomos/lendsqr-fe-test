@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App.tsx';
-import Dashboard from "./pages/Dashboard.tsx"
-import Login from './pages/Login.tsx';
-import Users from './pages/Users.tsx';
-import UserDetails from './pages/UsersDetails.tsx';
-import reportWebVitals from './reportWebVitals.ts';
+import App from './App';
+import Dashboard from "./pages/Dashboard"
+import Login from './pages/Login';
+import Users from './pages/Users';
+import UserDetails from './pages/UsersDetails';
+import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 export const router = createBrowserRouter(
     [
       {
-        path: "",
+        path: "/",
         element: <App />,
         children: [
             {
-              path: "/login",
+              path: "login",
               index: true,
               element: <Login />
             },
