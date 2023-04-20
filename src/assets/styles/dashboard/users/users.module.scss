@@ -67,11 +67,14 @@
                 gap:10px;
                 text-align: left;
                 width: 19%;
+                word-wrap: break-word;
                 
                 .users_table_header_text{
                     color: base.$primary-font-color;
                     font-size: 12px;
                     font-weight: 600;
+                    word-wrap:break-word;
+                    overflow: auto;
                 }
 
                 .users_table_header_icon{
@@ -90,6 +93,8 @@
         .users_table_items_wrapper{
             margin-top: 10px;
             word-wrap: break-word;
+            overflow: auto;
+            width: 100%;
 
             .users_table_item_wrapper{
                 display: flex;
@@ -99,6 +104,7 @@
                 padding-top: 20px;
                 padding-bottom: 20px;
                 border-bottom: 1px solid #213F7D1A;
+
 
                 &:last-child{
                     border-bottom: 0px;
@@ -189,6 +195,18 @@
                 font-size: 14px;
 
             }
+
+            & select{
+                background-color: #213F7D1A;
+                width:80px;
+                height: 30px;
+                padding:5px;
+                border-radius: 5px;
+            }
+            
+            & select::backdrop {
+                background-color: red;
+            }
         }
 
         .pagination_right_section{
@@ -226,6 +244,8 @@
         background-color: purple;
         font-size: 30px;
     }
+
+    
 }
 
 .user_details_wrapper{
@@ -256,7 +276,7 @@
 
     .profile_card_wrapper{
         padding: 30px 30px 0px 30px;
-        height: 210px;
+        min-height: 210px;
         background-color: white;
         border-radius: 5px;
         margin-top:30px;
@@ -362,4 +382,115 @@
     }
 
 }
+
+@media (max-width: 999px) {
+
+    .users_container_wrapper{
+        padding: 30px;
+
+        .users_table_wrapper{
+            overflow: auto;
+
+            .users_table_inner_wrapper{
+                width: 700px;
+            }
+        }
+        .users_cards_wrapper{
+            flex-wrap: wrap;
+            gap:10px;
+            justify-content: space-between;
+        }
+    
+        .users_card_item{
+            width: 47%;
+            padding-bottom: 20px;
+
+            .user_card_title{
+                font-size: 12px;
+            }
+        
+            .user_card_value{
+                font-size: 16px;
+            }
+        }
+
+        .users_table_headers_wrapper{
+            width: 700px;
+        }
+
+        .pagination_wrapper{
+            .pagination_right_section{
+                gap: 5px;
+            }
+
+            .pagination_left_section{
+                margin-top: -3px;
+
+                .pagination_left_section_text{
+                    font-size: 11px;
+                    padding-top: 4px;
+                }
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 999px){
+
+    .user_details_wrapper{
+        padding: 20px;
+
+
+        .header_wrapper{
+            justify-content: flex-start;
+            flex-wrap:wrap;
+            margin-top: 32px;
+    
+            .header_left{
+                font-size: 18px;
+                font-weight: 500;
+                color: base.$primary-font-color;
+            }
+    
+            .header_right_wrapper{
+                display: flex;
+                gap:10px;
+                margin-top: 10px;
+            }
+        }
+
+        .profile_card_wrapper{
+            .profile_upper{
+                flex-direction: column;
+                gap: 5px;
+
+                .profile_upper_divider{
+                    display: none;
+                }
+            }
+
+            .profile_lower{
+                overflow: auto;
+                margin-top: 30px;
+            }
+        }
+        
+        .profile_lower{
+            
+            & div{
+                font-size:14px;
+                padding-bottom: 2px;
+            }
+
+            .profile_lower_active{
+                border-bottom: 2px solid base.$primary-color;
+                color: base.$primary-color;
+            }
+        }
+    }
+    
+}
+
+
 

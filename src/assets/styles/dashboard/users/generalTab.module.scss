@@ -48,3 +48,27 @@
         margin-top:30px;
     }
 }
+
+@media (max-width: 999px){
+    .container_wrapper{
+        .tab_card_content_wrapper_grid4{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 10px;
+        }
+
+        .tab_card_content_wrapper{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 10px;
+        }
+
+        .tab_card_content{
+    
+            .tab_card_content_text{
+                word-wrap: break-word;
+            }
+        }
+    }
+
+}

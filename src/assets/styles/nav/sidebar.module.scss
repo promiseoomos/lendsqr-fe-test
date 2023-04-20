@@ -91,3 +91,11 @@
         color: #213F7D;
     }
 }
+
+@media (max-width: 999px) {
+    .sidebar_wrapper{
+        position: absolute;
+        background-color: white;
+        transition: all 6s ease-in;
+    }
+}
