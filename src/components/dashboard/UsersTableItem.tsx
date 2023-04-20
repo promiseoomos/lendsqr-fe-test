@@ -13,11 +13,9 @@ export default function UsersTableItem(props: any){
     const [ anchorElement, setAnchorElement ] = useState<HTMLButtonElement | null>(null);
 
     const handleAnchor = (event: MouseEvent<HTMLButtonElement>) => {
-        console.log(event);
         setAnchorElement(event.currentTarget)
     }
     const handlePopoverClose = (event: MouseEvent<HTMLButtonElement>) => {
-        console.log(event);
         setAnchorElement(null)
     }
     const statuses = ["active", "pending", "blacklisted", "inactive"]
