@@ -40,7 +40,7 @@
     .topbar_left_wrapper{
         display: flex;
         gap: 150px;
-        justify-content: space-around;
+        justify-content: flex-start;
 
         .topbar_left_search_wrapper{
             display: flex;
@@ -58,5 +58,45 @@
         }
         
 
+    }
+
+    .topbar_responsive_wrapper{
+        position:absolute;
+        width: 100%;
+        background-color: base.$primary-color;
+    }
+
+    @media (max-width: 999px){
+        .topbar_left_wrapper{
+            gap: 20px;
+        }
+
+        .topbar_right_wrapper{
+            gap:10px;
+            padding-top:5px;
+
+            .topbar_profile_wrapper{
+                gap:5px;
+
+                .topbar_right_image{
+                    width:30px;
+                    height: 30px;
+                    margin-top: 10px;
+                }
+
+                .topbar_right_text{
+                    font-size: 12px;
+                    padding-top: 3px;
+                }
+            }
+        }
+
+        &{
+            padding: 30px 26px 20px 10px;
+        }
+
+        .topbar_right_wrapper{
+            justify-content: flex-end;
+        }
     }
 }

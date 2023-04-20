@@ -35,8 +35,8 @@ export default function Sidebar(){
             </div>
 
             {
-                sidebarsItems.map(itemWrapper => 
-                    <div>
+                sidebarsItems.map((itemWrapper, index) => 
+                    <div key={index}>
                         <p className={styles.sidebar_items_wrapper_title}>{itemWrapper.name}</p>
                         {
                             itemWrapper.children.map(item => 
