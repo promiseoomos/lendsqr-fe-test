@@ -10,7 +10,6 @@ import { ReactComponent as ArrowRightIcon } from "../assets/svgs/arrowRigthIcon.
 import UsersTableItem from "../components/dashboard/UsersTableItem.tsx"
 import { Link } from "react-router-dom"
 import { Popover, Skeleton } from "@mui/material"
-import BaseSelect from "../components/base/BaseSelect.tsx"
 import BaseInput from "../components/base/BaseInput.tsx"
 import BaseButton from "../components/base/BaseButton.tsx"
 import { flexbox } from "@mui/system"
