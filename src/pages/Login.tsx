@@ -3,8 +3,8 @@ import loginstyles from "../assets/styles/onboarding/login.module.scss"
 import loginImage from "../assets/images/loginImage.png"
 import BaseInput from "../components/base/BaseInput";
 import BaseButton from "../components/base/BaseButton"
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
@@ -17,16 +17,23 @@ export default function Login()  {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
 
+    const [ user, setUser ] = useState({
+        email : "",
+        password: "",
+    })
+
     const loginUser = () => {
+    
         navigator("/dashboard/users")
+        
     }
     return (
-        <div className={loginstyles.body}>
+        <div role="wrapper" id="loginBody" className={loginstyles.body}>
             <Logo />
 
             <div className={loginstyles.flexwrapper}>
                 <div className={loginstyles.imgWrapperChild}>
-                    <img src={loginImage} alt="Login Logo" className={loginstyles.wrapperImage} />
+                    <img src={loginImage} alt="Login Image" className={loginstyles.wrapperImage} />
                 </div>
 
                 <div className={loginstyles.formWrapperChild}>
@@ -41,7 +48,7 @@ export default function Login()  {
                         </div>
 
                         <div className={loginstyles.baseInput}>
-                            <BaseInput type="password" name="email" width={matches ? '100%' : '425px' } placeholder="Password" />
+                            <BaseInput type="password" name="password" width={matches ? '100%' : '425px' } placeholder="Password" />
                         </div>
                     </div>
                     

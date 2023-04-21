@@ -179,19 +179,19 @@ export default function Users(){
                         users.length > 0 
                         ?
                             
-                            <div className={styles.users_table_items_wrapper}>
+                            <div role="table-data" className={styles.users_table_items_wrapper}>
                                 {
                                     
                                     users.slice(0, pageSize * currentPage).splice(((currentPage * pageSize) - pageSize) + 1, pageSize).map((user : any, index) => (
 
-                                            <UsersTableItem key={user.id} user={user} />     
+                                            <UsersTableItem role="table-data-item" key={user.id} user={user} />     
                                         
                                     ))
                                 }
                                 
                             </div>
                         :
-                            <div className={styles.users_table_items_wrapper}>
+                            <div role="table-data" className={styles.users_table_items_wrapper}>
                                 <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
                                 <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
                                 <Skeleton variant="text" animation="wave" sx={{ fontSize: '2.5rem' ,width:'100%'}} />
