@@ -12,15 +12,16 @@ This App uitlizes 21st century technology to power lenders to make their lending
 
 ## Getting Started
 
-- Clone the repository by running git clone https://github.com/GlobamedTech/medwaka-frontend-new.git in your terminal.
+- Clone the repository by running git clone https://github.com/promzybankz/lendsqr-fe-test.git in your terminal.
 - Run npm install to install all necessary dependencies.
 - Create a .env file in the root directory with the necessary environment variables.
 - Start the development server by running npm start.
-- The application will now be running on http://localhost:3000/.
+- The application will now be running on http://localhost:3000/
 
 ## Deployment
 
-This application is ready to be deployed to a variety of platforms, including Heroku and Firebase.
+You can view the live deployment here:
+https://promise-omorotionmwan-lendsqr-fe-test.vercel.app/
 
 ## Built With
 
