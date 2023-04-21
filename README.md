@@ -22,6 +22,9 @@ This App uitlizes 21st century technology to power lenders to make their lending
 
 You can view the live deployment here:
 https://promise-omorotionmwan-lendsqr-fe-test.vercel.app/
+# Login with this test details
+email: fetest@lendsqr.com
+password: fetest123
 
 ## Built With
 
