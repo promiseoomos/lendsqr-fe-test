@@ -42,7 +42,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 LendSqr
-https://https://www.lendsqr.com/
+https://www.lendsqr.com/
 
 ## Inspiration/Credit
 - Recruitment
