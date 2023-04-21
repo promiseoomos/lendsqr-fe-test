@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# LENDSQR TEST APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This App uitlizes 21st century technology to power lenders to make their lending process seamless and clean as possible.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Secure login and user authentication
+- Real time Lenders Users Dashboard
+- Perform action on individual Users
+- Realtime analytics of Loan Users
+- In-App SMS Messaging of Loan Users
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Clone the repository by running git clone https://github.com/GlobamedTech/medwaka-frontend-new.git in your terminal.
+- Run npm install to install all necessary dependencies.
+- Create a .env file in the root directory with the necessary environment variables.
+- Start the development server by running npm start.
+- The application will now be running on http://localhost:3000/.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Deployment
 
-### `npm test`
+This application is ready to be deployed to a variety of platforms, including Heroku and Firebase.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
+- React - JavaScript library for building user interfaces
+- MaterialUI v5
+- Typescript
+- AntD UI
+- Testing Library
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributors
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Promise Omos https://github.com/promzybankz
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Acknowledgments
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+LendSqr
+https://https://www.lendsqr.com/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Inspiration/Credit
+- Recruitment
+- Scaling up
+- Double down
